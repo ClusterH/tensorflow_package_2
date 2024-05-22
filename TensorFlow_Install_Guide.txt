@@ -1,0 +1,32 @@
+Tensorflow 2.16.1 - CPU Package Installation - Windows 10 x64
+1. PreInstallations
+Clone down this repository.
+Unzip (their sub zip files too) the tensorflow_2.16.1.zip
+Install python v3.12.3 (installer is located in zip file)
+Install VC_redust.x64_2015_2022.exe if you have not been installed.
+2. Install tensorflow and all dependencies:
+Go to the directory Tensorflow_v2_16_all_required_packages_python_v3_12, and execute following command on the cmd
+
+ pip install --no-index --find-links . tensorflow
+This will install all dependecy whl files inside of directory
+
+3. Verify Installation
+Open the cmd and run the python, run following command
+
+import tensorflow as tf
+print(tf.__version__) // You should see 2.16.1 (tensorflow version) after execute this command
+
+import keras
+keras.__version__  // You should see '3.3.3' (keras version)
+
+import numpy as np
+ndarray = np.ones([3, 3])
+print("Tensorflow operations convert numpy arrays to Tensors automatically")
+tensor = tf.math.multiply(ndarray, 42)
+print(tensor)
+
+// The Output should be as follows:
+tf.Tensor(
+[[42. 42. 42.]
+ [42. 42. 42.]
+ [42. 42. 42.]], shape=(3, 3), dtype=float64)
